@@ -1,7 +1,7 @@
 {
   "name": "plug-and-play-companion",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "repository": "git@github.com:magnificus/plug-and-play-companion.git",
   "author": "Tobias Elinder <tobiaselinder@gmail.com>",
   "license": "MIT",
@@ -11,5 +11,9 @@
   },
   "devDependencies": {
     "ts-node": "^10.9.1"
+  },
+  "scripts": {
+    "build": "yarn tsc",
+    "start": "yarn tsc && node ./bin/server.js"
   }
 }
