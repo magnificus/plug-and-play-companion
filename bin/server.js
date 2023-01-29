@@ -8,9 +8,20 @@ const port = 6655;
 app.use(cors({
     origin: '*'
 }));
-app.get("/", (req, res) => {
-    res.send("Hello");
-});
 app.listen(port, () => {
     console.log("running server");
+});
+app.get("/", (req, res) => {
+    const forwardedHeaders = JSON.parse(req.get("forwardedHeaders"));
+    const finalURL = forwardedHeaders.finalURL;
+    delete forwardedHeaders.finalURL;
+    const otherHeaders = Object.keys(forwardedHeaders);
+    console.log("other headers: " + otherHeaders);
+    console.log("final URL: " + finalURL);
+    console.log("hello mate");
+    res.send({ "Response": "Hello" });
+});
+app.post("/", (req, res) => {
+    console.log("ya tryin to post??");
+    res.send({ "Response": "PostMate" });
 });
