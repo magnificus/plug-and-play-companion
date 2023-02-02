@@ -30,13 +30,13 @@
     "build": "yarn tsc",
     "start": "yarn tsc && node --experimental-modules bin/server.js",
     "package": "pkg . ",
-    "package-unix": "pkg . --targets=['node18-linux-arm64']"
+    "package-unix": "pkg . --targets=['latest-linux-arm64']"
   },
   "pkg": {
     "scripts": "bin/**/*.js",
     "assets": "views/**/*",
     "targets": [
-      "node18-win-x64"
+      "latest-win-x64"
     ],
     "outputPath": "dist"
   }
