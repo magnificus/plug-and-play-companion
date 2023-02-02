@@ -29,7 +29,7 @@
   "scripts": {
     "build": "yarn tsc",
     "start": "yarn tsc && node --experimental-modules bin/server.js",
-    "package": "pkg ."
+    "package": "pkg . "
   },
   "pkg": {
     "scripts": "bin/**/*.js",
