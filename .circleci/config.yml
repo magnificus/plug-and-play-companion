@@ -20,9 +20,12 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn package
+      - run:
+          name: Compress Artifacts
+          command: 7z a -mx=5 binaries_win.7z ./bin/
       - store_artifacts:
-          path: dist
-          destination: dist
+          path: binaries_win.7z
+          destination: binaries_win.7z
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
