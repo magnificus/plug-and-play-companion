@@ -31,13 +31,12 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn build
-      - run: pkg . --targets ["node18-linux-arm64", "node18-macos-arm64"]
+      - run: yarn package-unix
       - run: 7z a -mx=5 binaries_unix_macos.7z ./bin/
       - store_artifacts:
           path: binaries_unix_macos.7z
           destination: binaries_unix_macos.7z
 
-  
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
