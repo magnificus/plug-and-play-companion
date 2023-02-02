@@ -31,7 +31,7 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn build
-      - run: yarn package-unix
+      - run: yarn package
       - run: 7z a -mx=5 binaries_unix_macos.7z ./bin/
       - store_artifacts:
           path: binaries_unix_macos.7z
