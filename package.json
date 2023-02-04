@@ -30,8 +30,8 @@
     "build": "yarn tsc",
     "start": "yarn tsc && node bin/server.js",
     "packageWindows": "pkg . --targets=latest-win-x64",
-    "packageUnix:": "pkg . --targets=latest-linux-arm64",
-    "packageMac:": "pkg . --targets=latest-macos-arm64"
+    "packageUnix": "pkg . --targets=latest-linux-arm64",
+    "packageMac": "pkg . --targets=latest-macos-arm64"
   },
   "pkg": {
     "scripts": "bin/**/*.js",
