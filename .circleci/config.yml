@@ -39,11 +39,29 @@ jobs:
       - store_artifacts:
           path: binaries_macos_unix.7z
           destination: binaries_macos_unix.7z
+  buildMac:
+    macos:
+      xcode: 14.2.0
+    steps:
+      - checkout
+      - run: yarn install
+      - run: yarn build
+      #- run: yarn packageUnix
+      - run: yarn packageMac
+      - run: sudo apt update
+      - run: sudo apt install p7zip-full p7zip-rar
+      - run: 7z a -mx=5 binaries_macos_unix.7z ./dist/
+      - store_artifacts:
+          path: binaries_macos_unix.7z
+          destination: binaries_macos_unix.7z
+
+
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   builds:
     jobs:
-      - buildUnix
+      - buildMac
       - buildWindows
