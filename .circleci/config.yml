@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn build
-      - run: yarn package
+      - run: "pkg . --targets=latest-win-x64"
       - run: 7z a -mx=5 binaries_win.7z ./bin/
       - store_artifacts:
           path: binaries_win.7z
@@ -31,7 +31,7 @@ jobs:
       - checkout
       - run: yarn install
       - run: yarn build
-      - run: yarn package
+      - run: "pkg . --targets=latest-macos-arm64,latest-linux-arm64"
       - run: sudo apt update
       - run: sudo apt install p7zip-full p7zip-rar
       - run: 7z a -mx=5 binaries.7z ./bin/
@@ -45,3 +45,4 @@ workflows:
   builds:
     jobs:
       - buildUnix
+      - buildWindows
