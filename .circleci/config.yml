@@ -21,7 +21,7 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn packageWindows
-      - run: 7z a -mx=5 binaries_win.7z ./bin/
+      - run: 7z a -mx=5 binaries_win.7z ./dist/
       - store_artifacts:
           path: binaries_win.7z
           destination: binaries_win.7z
@@ -34,7 +34,7 @@ jobs:
       - run: yarn packageUnix
       - run: sudo apt update
       - run: sudo apt install p7zip-full p7zip-rar
-      - run: 7z a -mx=5 binaries.7z ./bin/
+      - run: 7z a -mx=5 binaries.7z ./dist/
       - store_artifacts:
           path: binaries.7z
           destination: binaries.7z
