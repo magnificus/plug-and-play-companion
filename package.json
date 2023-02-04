@@ -35,7 +35,7 @@
     "scripts": "bin/**/*.js",
     "assets": "views/**/*",
     "targets": [
-      "latest-win-x64","latest-macos-arm64","latest-linux-arm64"
+      "latest-win-x64"
     ],
     "outputPath": "dist"
   }
