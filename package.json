@@ -28,15 +28,14 @@
   },
   "scripts": {
     "build": "yarn tsc",
-    "start": "yarn tsc && node --experimental-modules bin/server.js",
-    "package": "pkg . "
+    "start": "yarn tsc && node bin/server.js",
+    "packageWindows": "pkg . --targets=latest-win-x64",
+    "packageUnix:": "pkg . --targets=latest-linux-arm64"
   },
   "pkg": {
     "scripts": "bin/**/*.js",
     "assets": "views/**/*",
-    "targets": [
-      "latest-win-x64","latest-macos-arm64","latest-linux-arm64"
-    ],
+    "targets": [],
     "outputPath": "dist"
   }
 }
