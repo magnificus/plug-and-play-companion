@@ -7,7 +7,7 @@
   "repository": "git@github.com:magnificus/plug-and-play-companion.git",
   "author": "Tobias Elinder <tobiaselinder@gmail.com>",
   "license": "MIT",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "@types/node-fetch": "2",
     "cors": "^2.8.5",
